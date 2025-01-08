@@ -1,6 +1,6 @@
 package com.restful.booker.bookeinfo;
 
-import com.restful.booker.constant.EndPoints;
+import com.restful.booker.constant.Path;
 import com.restful.booker.model.AuthPojo;
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.rest.SerenityRest;
@@ -15,7 +15,7 @@ public class AuthSteps {
                 .when()
                 .header("Content-Type", "application/json")
                 .body(authPojo)
-                .post(EndPoints.AUTH)
+                .post(Path.AUTH)
                 .then().log().all().extract().path("token");
     }
 }

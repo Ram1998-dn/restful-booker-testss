@@ -15,7 +15,7 @@ public class GetTest extends TestBase {
     public void getAllBookings(){
         SerenityRest.given().log().all()
                 .when()
-                .get(EndPoints.GET_ALL_BOOKING_IDS)
+                .get(EndPoints.GET_BOOKING_BY_ID)
                 .then().log().all().statusCode(200);
     }
 }

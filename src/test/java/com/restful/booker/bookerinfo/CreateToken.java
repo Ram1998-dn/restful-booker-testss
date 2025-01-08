@@ -1,7 +1,7 @@
 package com.restful.booker.bookerinfo;
 
 import com.restful.booker.bookeinfo.AuthSteps;
-import com.restful.booker.constant.EndPoints;
+import com.restful.booker.constant.Path;
 import com.restful.booker.model.AuthPojo;
 import com.restful.booker.testbase.TestBase;
 import io.restassured.response.Response;
@@ -29,7 +29,7 @@ public class CreateToken extends TestBase {
                 .when()
                 .header("Content-Type", "application/json")
                 .body(authPojo)
-                .post(EndPoints.AUTH);
+                .post(Path.AUTH);
         response.then().log().all().statusCode(200);
         token = response.jsonPath().getString("token");
     }
